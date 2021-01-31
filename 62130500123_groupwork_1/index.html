@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+ 
+
+</head>
+
+<body>
+  <div class="bg-gray-800">
+    <div class="flex">
+
+      <!--Left Bar-->
+      <div class="w-2/5 text-white h-12 pl-36 py-4 h-auto">
+      
+        <!--Logo-->
+        <div class="h-10 w-10 text-white">
+          <img class="" src="images/logo.png" alt="logo" />   
+        </div> 
+        
+
+        <!--Nav-->
+        <nav class="mt-8 px-2">
+          <div id="Home"> 
+            <a href="#" class="group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 text-blue-400">
+              <i class="transform material-icons scale-150 mr-7 h-7 w-7 ">home</i>  
+              Home
+            </a>
+          </div> 
+
+          <div id="Explore"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class=" transform material-icons scale-150 mr-7 h-6 w-6 ">tag</span>  
+              Explore
+            </a>
+          </div> 
+
+          <div id="Notifications"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6  ">notifications_none</span>  
+              Notifications
+            </a>
+          </div> 
+
+          <div id="Messages"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6">mail_outline</span>  
+              Messages
+            </a>
+          </div>      
+              
+          <div id="Bookmarks"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6 ">bookmark_border</span>  
+              Bookmarks
+            </a>
+          </div>
+          
+          <div id="Lists"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6 ">list_alt</span>  
+              Lists
+            </a>
+          </div>
+          
+          <div id="Profile"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6 ">person_outline</span>  
+              Profile
+            </a>
+          </div>
+          
+          <div id="More"> 
+            <a href="#" class="mt-3 group flex items-center pl-4 pr-2 py-4 text-2xl leading-6 font-bold rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+              <span class="transform material-icons scale-150 mr-7 h-6 w-6 ">pending</span>  
+              More
+            </a>
+          </div>
+          
+
+          <button class="bg-blue-400 w-72 mt-6 hover:bg-blue-500 text-white text-xl font-bold py-4 px-4 rounded-full focus:outline-none">
+            Tweet
+          </button>
+        </nav>
+        
+
+
+        <!--Proflie-->      
+        <div class="flex-shrink-0 flex hover:bg-blue-00 rounded-full p-4 mt-36 mr-2 rounded-full hover:bg-gray-600 hover:bg-opacity-25 hover:text-blue-400">
+          <a href="#" class="flex-shrink-0 group block">
+            <div class="flex items-center">
+              <div>
+                <img class="inline-block h-12 w-12 rounded-full" src="images/Profile.jpg"/>
+              </div>
+              <div class="ml-3">
+                <p class="text-lg leading-6 font-medium text-white">
+                  |||Rkive⁷♡‧₊˚
+                </p>
+                <p class="text-base leading-5 font-medium text-gray-400 ">
+                  @KNJ_ReMarkable
+                </p>           
+              </div>
+              <div>
+                <p class=" text-2xl text-gray-400  float-right">
+                  <span class="ml-16 material-icons">more_horiz</span>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>             
+      </div>
+
+
+
+
+      <!--middle wall-->
+      <div class="w-3/4 border border-gray-600 h-auto  border-t-0">
+
+
+
+      <div class="flex">
+        <div class="flex-1 m-2">
+          <h2 class="px-4 py-2 text-3xl font-extrabold text-white">Home</h2>
+        </div>
+
+          <div class="flex-1 pr-2 py-2 ml-2 mr-1 mt-2">
+            <a href="#" class=" text-2xl font-medium rounded-full text-white hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">  
+              <img class="m-2 h-8 w-8"src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMyMi41NTggMzIyLjU1OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTMyMS42LDE4MC42MDFjLTAuOC0xLjYtMi44LTIuNC00LjQtMi44Yy05LjIsMC04OC40LTMuMi04OC40LTk1LjJjMC0yLjgtMi40LTUuMi01LjItNS4yYy0yLjgsMC01LjIsMi40LTUuMiw1LjIgICAgIGMwLDkyLTc5LjIsOTUuMi04OCw5NS4yYy0xLjIsMC0yLjQsMC40LTMuMiwxLjJjLTAuOCwwLjQtMS4yLDEuMi0xLjYsMS42Yy0wLjgsMS42LTAuOCwzLjYsMCw1LjJjMC44LDEuNiwyLjgsMi44LDQuOCwyLjggICAgIGMwLDAsMCwwLDAuNCwwYzkuMiwwLDg4LDMuMiw4OCw5NS4yYzAsMi44LDIuNCw1LjIsNS4yLDUuMmMyLjgsMCw1LjItMi40LDUuMi01LjJjMC05MS42LDc4LjgtOTUuMiw4OC05NS4yYzIsMCwzLjYtMS4yLDQuOC0yLjggICAgIEMzMjIuOCwxODQuMjAxLDMyMi44LDE4Mi4yMDEsMzIxLjYsMTgwLjYwMXogTTIyMy42LDI0NC42MDFjLTExLjYtMzgtNDAtNTQuNC02Mi40LTYxLjZjMjIuNC03LjIsNTAuOC0yMy42LDYyLjQtNjEuNiAgICAgYzExLjYsMzgsNDAsNTQuNCw2Mi40LDYxLjZDMjYzLjYsMTkwLjIwMSwyMzUuMiwyMDYuNjAxLDIyMy42LDI0NC42MDF6IiBmaWxsPSIjMmZhZGU3IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+CgkJCTxwYXRoIGQ9Ik0xNTcuNiw3Ni42MDFjMi44LDAsNS4yLTIuNCw1LjItNS42YzAtMi44LTIuNC01LjItNS4yLTUuMmMtNC44LDAtNDgtMS42LTQ4LTUyYzAtMi44LTIuNC01LjItNS4yLTUuMiAgICAgYy0yLjgsMC01LjIsMi40LTUuMiw1LjJjMCw1MC40LTQzLjIsNTItNDgsNTJjLTAuNCwwLTAuNCwwLTAuNCwwYy0yLjgsMC40LTQuOCwyLjQtNC44LDUuMnMyLjQsNS4yLDUuMiw1LjJjNS4yLDAsNDgsMS42LDQ4LDUyICAgICBjMCwyLjgsMi40LDUuMiw1LjIsNS4yYzIuNCwwLjQsNC44LTIsNC44LTQuOGMwLTUwLjQsNDMuMi01Miw0OC01MkgxNTcuNnogTTEwNCw5OS40MDFjLTYuNC0xNS4yLTE4LTIzLjYtMjguOC0yOC40ICAgICBjMTEuNi00LjgsMjIuNC0xNCwyOC44LTI4LjRjNi40LDE1LjIsMTgsMjMuNiwyOC44LDI4LjRDMTIxLjIsNzUuODAxLDExMC40LDg1LjAwMSwxMDQsOTkuNDAxeiIgZmlsbD0iIzJmYWRlNyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPgoJCQk8cGF0aCBkPSJNMTExLjYsMjQ2LjIwMWMtNC44LDAtNDgtMS42LTQ4LTUyYzAtMi44LTIuNC01LjItNS4yLTUuMmMtMi44LDAtNS4yLDIuNC01LjIsNS4yYzAsNTAuNC00My4yLDUyLTQ4LDUyICAgICBjLTAuNCwwLTAuNCwwLTAuNCwwYy0yLjgsMC40LTQuOCwyLjQtNC44LDUuMmMwLDIuOCwyLjQsNS4yLDUuMiw1LjJjNS4yLDAsNDgsMS42LDQ4LDUyYzAsMi44LDIuNCw1LjIsNS4yLDUuMiAgICAgYzIuNCwwLjgsNC44LTEuNiw0LjgtNC44YzAtNTAuNCw0My4yLTUyLDQ4LTUyaDAuNGMyLjgsMCw1LjItMi40LDUuMi01LjZDMTE2LjgsMjQ4LjYwMSwxMTQuNCwyNDYuMjAxLDExMS42LDI0Ni4yMDF6ICAgICAgTTU4LDI4MC4yMDFjLTYuOC0xNS4yLTE4LTIzLjYtMjguOC0yOC40YzExLjYtNC44LDIyLjQtMTQsMjguOC0yOC40YzYuNCwxNS4yLDE4LDIzLjYsMjguOCwyOC40ICAgICBDNzUuMiwyNTYuNjAxLDY0LjQsMjY1LjgwMSw1OCwyODAuMjAxeiIgZmlsbD0iIzJmYWRlNyIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPgoJCTwvZz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
+            </a>
+          </div>
+      </div>
+
+      <hr class="border-gray-600">
+
+      <!--creat tweet-->
+      <div class="flex">
+        <div class="mt-3 ml-4 mr-2 w-16 ">
+          <img class="inline-block h-16 w-16 rounded-full" src="images/Profile.jpg"/>
+        </div>
+
+        <div class="flex-1 px-3 pt-2 mt-4">
+          <textarea class=" bg-transparent text-gray-400 font-normal text-2xl w-full focus:outline-none" 
+            rows="1" cols="50" placeholder="What's happening?"></textarea>
+        </div>                    
+      </div>
+
+
+      <!--creat tweet icons bar-->
+
+      <div class="flex">
+        <div class="w-16"></div>
+
+          <div class="w-64 px-3">
+            <div class="flex items-center">
+
+              <div id="Media" class="flex-1 text-center pl-2 pt-0.5 my-1 mx-1.5">
+                <a href="" class="text-opacity-80 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-125 text-center material-icons">crop_original</span>
+                </a>
+              </div>
+                        
+
+              <div id="GIF" class="flex-1 text-center py-0.5 my-1 mx-1.5">
+                <a href="" class="text-opacity-80 mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-125 text-center material-icons">slideshow</span>
+                </a>
+              </div>
+
+                        
+
+              <div id="Poll" class="flex-1 text-center py-0.5 my-1 mx-1.5">
+                <a href="" class="text-opacity-80 mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-125 material-icons">leaderboard</span>
+                </a>
+              </div>          
+                          
+
+              <div id="Emoji" class="flex-1 text-center py-0.5 my-1 mx-1.5">
+                <a href="" class="text-opacity-80 mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-125 material-icons">sentiment_satisfied_alt</span>
+                </a>
+              </div>          
+
+                          
+              <div id="Schedule" class="flex-1 text-center py-0.5 my-1 mx-1.5">
+                <a href="" class="text-opacity-80 mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-125 material-icons">pending_actions</span>
+                </a>
+              </div>            
+
+            </div>
+          </div>
+
+                  <div class="flex-1">
+                      <button class="bg-blue-400 mt-1 mb-3 hover:bg-blue-500 text-white text-base font-extrabold py-3 px-5 rounded-full mr-8 float-right focus:outline-none">
+                          Tweet
+                        </button>
+                  </div>
+      </div>
+
+              <hr class="border-gray-600 py-1 border-t border-b bg-gray-600 bg-opacity-25">
+
+
+        
+      <!--first tweet-->
+      <div class="flex flex-shrink-0 p-4 pb-0">
+        <a href="#" class="flex-shrink-0 group block">
+          <div class="flex ">
+            <div>
+              <img class="inline-block h-16 w-16 rounded-full" src="images/Profile5.jpg"/>
+            </div>
+            <div class="ml-3  ">
+                <p class="text-xl leading-2 font-bold text-white">
+                  ENHYPEN <span class="transform scale-100  material-icons">verified</span>
+                <span class="text-lg leading-2 font-normal text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                  @ENHYPEN_members · 22h
+                </span> <br>
+                  <p class="mt-1 text-lg w-62 font-medium text-white">
+                    시즌 그리팅~ 추억 돋네요ㅎ<br>
+                    EN-CONNECT가 D-6!<br>
+                    See you soon~🤍<br>
+                    <span class="text-blue-400"> #ENHYPEN #JAY</span> Photo by <span class="text-blue-400"> #NI_KI</span>  
+                  </p>
+                </p>
+            </div>
+          </div>
+        </a> 
+      
+        <div class="flex-1">
+          <a href="" class="float-right mr-1 mt-3 object-right text-center text-gray-400">
+            <span class="w-12 h-14 material-icons">more_horiz</span>
+          </a>
+        </div>
+      </div>
+      
+      
+      <div class="pl-20">
+        
+        <div class="flex my-2 mr-5  rounded-2xl border border-gray-600">
+          <img class="rounded-2xl" src="images/Tweet1.jpg"/>
+        </div>
+      
+      
+        <div class="flex">
+          <div class="w-full">
+                      
+            <div class="flex items-center">
+              <div id="Reply" class="flex-1 text-center my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1 leading-6 rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">chat_bubble_outline</span>
+                  <span class="text-lg font-normal ml-3 pb-1">20.5K</span>
+                </a>
+              </div>        
+                          
+      
+              <div id="Retweet" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1  leading-6 rounded-full hover:bg-green-900 hover:bg-opacity-25 hover:text-green-500">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">repeat</span>
+                  <span class="text-lg font-normal ml-3 pb-1">72.1K</span>
+                </a>
+              </div>              
+                          
+      
+              <div id="Like" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1  leading-6 rounded-full  hover:bg-pink-900 hover:bg-opacity-25 hover:text-pink-600">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">favorite_border</span>
+                  <span class="text-lg font-normal ml-3 pb-1">272K</span>
+                </a>
+              </div>            
+      
+                          
+              <div id="Share" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1 leading-6 rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-110 text-center h-7 w-6 material-icons ">ios_share</span>
+                </a>
+              </div>            
+                          
+            </div>
+          </div>
+        </div>
+      </div>
+            
+      <hr class="border-gray-600">
+
+
+      <!--second tweet-->
+      <div class="flex flex-shrink-0 p-4 pb-0">
+        <a href="#" class="flex-shrink-0 group block">
+          <div class="flex ">
+            <div>
+              <img class="inline-block h-16 w-16 rounded-full" src="images/Profile1.jpg"/>
+            </div>
+            <div class="ml-3  ">
+                <p class="text-xl leading-2 font-bold text-white">
+                  방탄소년단 <span class="transform scale-100  material-icons">verified</span>
+                <span class="text-lg leading-2 font-normal text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                  @BTS_twt · 1d
+                </span> <br>
+                  <p class="mt-1 text-lg w-62 font-medium text-white">
+                    아미의 흰둥이 🤍❄⛄🐧🤍
+                  </p>
+                </p>
+            </div>
+          </div>
+        </a> 
+      
+        <div class="flex-1">
+          <a href="#" class="float-right mr-1 mt-3 object-right text-center text-gray-400">
+            <span class="w-12 h-14 material-icons">more_horiz</span>
+          </a>
+        </div>
+      </div>
+      
+      
+      <div class="pl-20">
+        
+        <div class="flex my-2 mr-5  rounded-2xl border border-gray-600">
+          
+            <img class="rounded-2xl" src="images/Tweet2.jpg"/>
+          
+        </div>
+      
+      
+        <div class="flex">
+          <div class="w-full">
+                      
+            <div class="flex items-center">
+              <div id="Reply" class="flex-1 text-center my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1 leading-6 rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">chat_bubble_outline</span>
+                  <span class="text-lg font-normal ml-3 pb-1">164K</span>
+                </a>
+              </div>        
+                          
+      
+              <div id="Retweet" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-green-500 px-3 py-1  leading-6 rounded-full hover:bg-green-900 hover:bg-opacity-25">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">repeat</span>
+                  <span class="text-lg font-normal ml-3 pb-1">580K</span>
+                </a>
+              </div>              
+                          
+      
+              <div id="Like" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-pink-600 px-3 py-1  leading-6 rounded-full  hover:bg-pink-900 hover:bg-opacity-25">
+                  <span class="transform scale-110 text-center h-7 w-7 material-icons ">favorite</span>
+                  <span class="text-lg font-normal ml-3 pb-1">1.8M</span>
+                </a>
+              </div>            
+      
+                          
+              <div id="Share" class="flex-1 text-center px-2 my-1">
+                <a href="#" class="w-11 h-11 group flex items-center text-gray-500 px-3 py-1 leading-6 rounded-full hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400">
+                  <span class="transform scale-110 text-center h-7 w-6 material-icons ">ios_share</span>
+                </a>
+              </div>            
+                          
+            </div>
+          </div>
+        </div>
+      </div>
+            
+      <hr class="border-gray-600">
+
+    <!--add tweet here-->
+
+
+    </div>
+
+
+
+    <!--right menu-->
+      <div class="w-2/3 ">  
+
+        <div class="relative text-gray-300 w-4/5 p-9 pt-3 pb-0 ">
+          <button type="submit" class="text-opacity-80 absolute ml-5 mt-3 focus:outline-none">
+                <span class=" transform scale-125 material-icons">search</span> 
+          </button>
+
+          <input placeholder="Search Twitter" class="bg-gray-500 bg-opacity-25 h-12 px-16 w-full rounded-full text-xl focus:outline-none ">
+          
+        </div>
+
+    <!--Trend-->
+
+    <div class="max-w-md rounded-3xl bg-gray-700 bg-opacity-25 overflow-hidden shadow-md m-6 ml-10 ">
+      <div class="flex">
+          <div class="flex-auto m-2">
+              <h2 class="pr-5 pl-4 py-2 text-2xl w-62 font-extrabold text-white">Worldwide trends</h2>
+          </div>
+          <div class="flex-1 px-4 py-1 m-2">
+              <a href="" class="rounded-full text-blue-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+                  <span class="transform scale-125 material-icons m-2  ">settings</span> 
+                </a>
+          </div>
+      </div>
+
+
+      <hr class="border-gray-600">
+
+          <!--first trending tweet-->
+      <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+          <div class="flex-1">
+              <p class="px-4 ml-2 mt-4 w-48 text-base text-gray-400">1 · K-pop · Trending</p>
+              <h2 class="px-4 ml-2 pb-1 w-48 font-bold text-lg text-white">#BTS_Dynamite</h2>
+              <p class="px-4 ml-2 mb-3 w-48 text-base text-gray-400">4.6M Tweets</p>
+              
+          </div>
+          <div class=" px-3 pt-1 pb-3 mx-3">
+              <a href="" class="rounded-full text-gray-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+                  <span class="m-2 transform scale-95 material-icons">more_horiz</span>
+              </a>
+          </div>
+      </div>
+      <hr class="border-gray-600">
+
+
+          <!--second trending tweet-->
+      <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+        <div class="flex-1">
+            <p class="px-4 ml-2 mt-4 w-48 text-base text-gray-400">2 · Trending</p>
+            <h2 class="px-4 ml-2 pb-1 w-48 font-bold text-lg text-white">hobi</h2>
+            <p class="px-4 ml-2 mb-3 w-48 text-base text-gray-400">135K Tweets</p>
+            
+        </div>
+        <div class=" px-3 pt-1 pb-3 mx-3">
+            <a href="" class="rounded-full text-gray-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+                <span class="m-2 transform scale-95 material-icons">more_horiz</span>
+            </a>
+        </div>
+      </div>
+      <hr class="border-gray-600">
+
+
+          <!--third trending tweet-->
+      <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+        <div class="flex-1">
+          <p class="px-4 ml-2 mt-4 w-48 text-base text-gray-400">3 · Trending</p>
+            <h2 class="px-4 ml-2 pb-1 w-48 font-bold text-lg text-white">#TXTatSMA</h2>
+          <p class="px-4 ml-2 mb-3 w-48 text-base text-gray-400">169.1K Tweets</p>       
+        </div>
+        <div class=" px-3 pt-1 pb-3 mx-3">
+          <a href="" class="rounded-full text-gray-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+            <span class="m-2 transform scale-95 material-icons">more_horiz</span>
+          </a>
+        </div>
+      </div>
+      <hr class="border-gray-600">
+
+
+        <!--forth trending tweet-->
+      <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+        <div class="flex-1">
+            <p class="px-4 ml-2 mt-4 w-48 text-base text-gray-400">4 · Music · Trending</p>
+            <h2 class="px-4 ml-2 pb-1 w-48 font-bold text-lg text-white">#SMA2021</h2>
+            <p class="px-4 ml-2 mb-3 w-48 text-base text-gray-400">102K Tweets</p>
+            
+        </div>
+        <div class=" px-3 pt-1 pb-3 mx-3">
+            <a href="" class="rounded-full text-gray-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+                <span class="m-2 transform scale-95 material-icons">more_horiz</span>
+            </a>
+        </div>
+    </div>
+    <hr class="border-gray-600">
+
+
+      <!--fifth trending tweet-->
+    <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+      <div class="flex-1">
+          <p class="px-4 ml-2 mt-4 w-48 text-base text-gray-400">5 · Politics · Trending</p>
+          <h2 class="px-4 ml-2 pb-1 w-48 font-bold text-lg text-white">#ENHYPEN4thROTY</h2>
+          <p class="px-4 ml-2 mb-3 w-48 text-base text-gray-400">138K Tweets</p>
+          
+      </div>
+      <div class=" px-3 pt-1 pb-3 mx-3">
+          <a href="" class="rounded-full text-gray-400 hover:bg-blue-600 hover:bg-opacity-25 hover:text-blue-400 float-right">
+              <span class="m-2 transform scale-95 material-icons">more_horiz</span>
+          </a>
+      </div>
+    </div>
+    <hr class="border-gray-600">
+
+
+      <!--show more-->
+
+      <div class="flex">
+          <a href="" class="flex-1 p-4 hover:bg-gray-700 hover:bg-opacity-25">
+              <h2 class="px-1 ml-1 w-48 text-lg font-normal text-blue-400">Show more</h2>  
+          </a>
+      </div>
+  
+  </div>  
+
+
+  <!--Who to follow-->
+                
+  <div class="max-w-md rounded-3xl bg-gray-700 bg-opacity-25 overflow-hidden shadow-md m-4 mr-20 ml-10">
+    <div class="flex">
+        <div class="flex-auto m-2">
+            <h2 class="px-4 py-2 text-2xl w-69 font-extrabold text-white">Who to follow</h2>
+        </div>
+    </div>
+
+
+    <hr class="border-gray-600">
+
+        <!--first person--> 
+        
+    <div class="flex flex-shrink-0  hover:bg-gray-700 hover:bg-opacity-25">
+        <div class="flex-1 ">
+            <div class="flex items-center w-56">
+                <div>
+                  <img class="inline-block h-14 w-14 rounded-full ml-5 my-3" src="images/Profile2.jpg" />
+                </div>
+                <div class="ml-3 mt-2 mb-3">
+                  <p class="text-xl leading-7 font-semibold text-white">
+                    SF9official <span class=" transform scale-95 material-icons">verified</span>
+                  </p>
+                  <p class="text-lg leading-6 font-normal text-gray-400 group-hover:text-gray-300 ">
+                    @SF9official
+                  </p>
+                </div>
+              </div>
+            
+        </div>
+        <div class="flex-1 px-4 py-2 m-2">
+            <a href="" class="mt-1 float-right">
+                <button class=" hover:bg-blue-400 hover:bg-opacity-25 hover:border-blue-400 text-blue-400 font-semibold  py-1.5 px-6 border border-blue-400 hover:border-transparent rounded-full">
+                    Follow
+                  </button>  
+            </a>
+            
+        </div>
+    </div>
+    <hr class="border-gray-600">
+
+
+    <!--second person--> 
+        
+    <div class="flex flex-shrink-0  hover:bg-gray-700 hover:bg-opacity-25">
+      <div class="flex-1 ">
+          <div class="flex items-center w-60">
+              <div>
+                <img class="inline-block h-14 w-14 rounded-full ml-5 my-3" src="images/Profile4.jpg" />
+              </div>
+              <div class="ml-3 mt-2 mb-3">
+                <p class="text-xl leading-7 font-semibold text-white">
+                  billboard <span class=" transform scale-95 material-icons">verified</span>
+                </p>
+                <p class="text-lg leading-6 font-normal text-gray-400 group-hover:text-gray-300 ">
+                  @billboard
+                </p>
+              </div>
+            </div>
+          
+      </div>
+      <div class="flex-1 px-4 py-2 m-2">
+          <a href="" class="mt-1 float-right">
+              <button class=" hover:bg-blue-400 hover:bg-opacity-25 hover:border-blue-400 text-blue-400 font-semibold  py-1.5 px-6 border border-blue-400 hover:border-transparent rounded-full">
+                  Follow
+                </button>  
+          </a>
+          
+      </div>
+  </div>
+  <hr class="border-gray-600">
+
+   
+
+        <!--show more-->
+
+      <div class="flex hover:bg-gray-700 hover:bg-opacity-25">
+          <a href="" class="flex-1 p-4">
+              <h2 class="px-2 ml-2 w-48 font-normal text-lg text-blue-400">Show more</h2>  
+          </a>
+      </div>
+
+  </div>
+
+
+    <!--info-->
+
+    <div class="flow-root m-6 inline ml-16">
+      <div class="flex-1">
+        <a href="#" class="hover:">
+          <p class="text-base leading-7 font-medium text-gray-500">Terms of Service &nbsp; Privacy Policy &nbsp; Cookies Policy<br> Ads info &nbsp; More... &nbsp; &copy; 2021 Twitter, Inc.</p>
+        </a>
+      </div>
+      
+    </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- my main.js -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
